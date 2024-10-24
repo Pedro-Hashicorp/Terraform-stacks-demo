@@ -18,7 +18,7 @@ resource "aws_vpc" "demo" {
   enable_dns_hostnames = true
   tags = {
     "Name"                                      = local.tagName
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/cluster" = "shared"
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_subnet" "demo" {
 
   tags = {
     "Name"                                      = local.tagName
-    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/cluster" = "shared"
     "kubernetes.io/role/elb"                    = 1
   }
 }
